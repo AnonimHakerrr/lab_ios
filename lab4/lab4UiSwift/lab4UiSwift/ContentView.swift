@@ -1,3 +1,9 @@
+//
+//  ContentView.swift
+//  lab4UiSwift
+//
+//  Created by MacBook on 10.10.2025.
+//
 
 import SwiftUI
 
@@ -8,14 +14,8 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-            Button(action: {}, label: {
-            Image(systemName: "suit.heart.fill")
-            .font(.system(size: 20, weight: .bold))
-            .foregroundColor(.red)})
-            
         }
         .padding()
-        
     }
 }
 

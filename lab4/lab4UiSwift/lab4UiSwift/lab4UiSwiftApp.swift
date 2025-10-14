@@ -1,14 +1,14 @@
 //
-//  lab3App.swift
-//  lab3
+//  lab4UiSwiftApp.swift
+//  lab4UiSwift
 //
-//  Created by MacBook on 16.09.2025.
+//  Created by MacBook on 10.10.2025.
 //
 
 import SwiftUI
 
 @main
-struct lab3App: App {
+struct lab4UiSwiftApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
