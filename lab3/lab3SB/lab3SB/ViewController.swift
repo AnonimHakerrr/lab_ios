@@ -1,19 +1,35 @@
-//
-//  ViewController.swift
-//  lab3SB
-//
-//  Created by MacBook on 03.10.2025.
-//
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var dogSwich: UISwitch!
+    @IBOutlet weak var catSwich: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+ 
+        let name = nameTextField.text ?? ""
+        let phone = phoneTextField.text ?? ""
+        let cat = catSwich.isOn
+        let dog = dogSwich.isOn
 
+        let userProfile = User(name: name, phone: phone, loveDog: dog, loveCat: cat)
+
+        // 3. Виводимо дані в консоль
+        print("--- Дані користувача ---")
+        print("Ім'я: \(userProfile.name)")
+        print("Телефон: \(userProfile.phone)")
+        print("Любить собак: \(userProfile.loveDog)")
+        print("Любить котів: \(userProfile.loveCat)")
+        print("-----------------------")
+    }
 
 }
 
