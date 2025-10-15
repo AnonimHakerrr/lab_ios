@@ -1,6 +1,6 @@
 //
-//  lab5IOSApp.swift
-//  lab5IOS
+//  testApp.swift
+//  test
 //
 //  Created by MacBook on 15.10.2025.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct lab5IOSApp: App {
+struct testApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

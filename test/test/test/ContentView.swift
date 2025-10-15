@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  lab5IOS
+//  test
 //
 //  Created by MacBook on 15.10.2025.
 //

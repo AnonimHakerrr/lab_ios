@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Joke: Codable, Identifiable {
+    let id: String
+    let icon_url: String?
+    let value: String
+    
+}
