@@ -18,40 +18,38 @@ struct ContentView: View {
             Color(red: 0.1, green: 0.1, blue: 0.2)
                 .ignoresSafeArea()
             
-            // Перша пляма (рожева)
-            Circle()
-                .fill(
-                    LinearGradient(
-                        gradient: Gradient(colors: [.pink, .purple]),
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
+            GeometryReader { geo in
+                Circle()
+                    .fill(
+                        LinearGradient(
+                            gradient: Gradient(colors: [.pink, .purple]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
                     )
-                )
-                .frame(width: 300, height: 300)
-                .blur(radius: 80) // Головний ефект розмиття
-                .offset(x: -100, y: -150) // Зміщуємо позицію
-            
-            // Друга пляма (блакитна)
-            Circle()
-                .fill(
-                    RadialGradient(
-                        gradient: Gradient(colors: [.blue, .cyan.opacity(0.8)]),
-                        center: .center,
-                        startRadius: 10,
-                        endRadius: 150
+                    .frame(width: geo.size.width * 0.8)
+                    .blur(radius: geo.size.width * 0.2)
+                    .offset(x: -geo.size.width * 0.25, y: geo.size.height * 0.2)
+                
+                Circle()
+                    .fill(
+                        RadialGradient(
+                            gradient: Gradient(colors: [.blue, .cyan.opacity(0.8)]),
+                            center: .center,
+                            startRadius: 10,
+                            endRadius: geo.size.width * 0.4
+                        )
                     )
-                )
-                .frame(width: 250, height: 250)
-                .blur(radius: 70)
-                .offset(x: 100, y: 120)
-            
-            // Третя пляма (зелена, менша)
-            Ellipse()
-                .fill(Color.green)
-                .frame(width: 200, height: 150)
-                .blur(radius: 50)
-                .offset(x: 50, y: -250)
-            
+                    .frame(width: geo.size.width * 0.7)
+                    .blur(radius: geo.size.width * 0.15)
+                    .offset(x: geo.size.width * 0.25, y: geo.size.height * 0.55)
+                
+                Ellipse()
+                    .fill(Color.green)
+                    .frame(width: geo.size.width * 0.6, height: geo.size.height * 0.3)
+                    .blur(radius: geo.size.width * 0.09 )
+                    .offset(x: geo.size.width * 0.3, y: geo.size.height * 0.1)
+            }.ignoresSafeArea()
             ScrollView {
                 VStack(spacing: 25) {
                     
@@ -86,7 +84,7 @@ struct ContentView: View {
                             TextEditor(text: $description)
                                 .frame(minHeight: 150)
                                 .font(.body)
-                                .padding(10)
+                                .padding()
                                 .background(Color.black.opacity(0.3))
                                 .cornerRadius(15)
                                 .colorScheme(.dark)
